@@ -175,13 +175,13 @@ def recuperar_conta_cliente(cliente):
     if not cliente.contas:
         print("Cliente não tem conta")
         return None
-    return cliente.contas[0]  # Corrigi de cliente.conta[0] para cliente.contas[0]
+    return cliente.contas[0]
 
 def depositar(clientes):
     cpf = input("Informe o CPF do cliente: ")
     cliente = filtrar_cliente(cpf, clientes)
 
-    if not cliente:  # Corrigi de if not clientes: para if not cliente:
+    if not cliente:
         print("Cliente não encontrado")
         return
 
@@ -194,7 +194,7 @@ def depositar(clientes):
 
     cliente.realizar_transacao(conta, transacao)
 
-def sacar(clientes):  # Adicionei a função sacar
+def sacar(clientes):
     cpf = input("Informe o CPF do cliente: ")
     cliente = filtrar_cliente(cpf, clientes)
 
@@ -250,7 +250,7 @@ def criar_cliente(clientes):
     endereco = input("Informe o endereço: ")
 
     cliente = PessoaFisica(nome=nome, data_nascimento=data_nascimento, cpf=cpf, endereco=endereco)
-    clientes.append(cliente)  # Corrigi de cliente.append(cliente) para clientes.append(cliente)
+    clientes.append(cliente) 
 
     print("Cliente criado com sucesso!")
 
@@ -283,7 +283,7 @@ def main():
         if opcao == "1":
             depositar(clientes)
         elif opcao == "2":
-            sacar(clientes)  # Chamada corrigida para a função sacar
+            sacar(clientes) 
         elif opcao == "3":
             exibir_extrato(clientes)
         elif opcao == "4":
